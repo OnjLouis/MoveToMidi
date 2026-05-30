@@ -1,0 +1,11 @@
+portable/
+release-stage/
+bin/
+obj/
+*.zip
+*.log
+*.tmp
+*.user
+*.suo
+MoveToMidi.ini
+token.txt
