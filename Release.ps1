@@ -95,12 +95,10 @@ function Publish-GitHubRelease([string]$version, [string]$zipPath) {
     $releaseBody = @"
 MoveToMidi $version
 
-- Initial public release.
-- Accessible WinForms converter for Ableton Move and Ableton Note .ablbundle files.
-- Converts Song.abl data directly from bundles without extracting.
-- Exports standard MIDI type 1 files.
-- Portable settings in MoveToMidi.ini beside the executable.
-- Built-in F1 help, command-line conversion, failure logging, and GitHub update checks.
+- Fixes GitHub update checks in the app.
+- Adds Ctrl+F1 and Help > Project on GitHub.
+- Adds Help > Donate.
+- Aligns About and executable metadata with the companion apps.
 "@
     try {
         $release = Invoke-RestMethod -Uri "https://api.github.com/repos/$repoFullName/releases/tags/$tag" -Headers $headers

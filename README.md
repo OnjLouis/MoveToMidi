@@ -2,7 +2,7 @@
 
 Accessible Windows utility for converting Ableton Move and Ableton Note `.ablbundle` sets to standard MIDI files.
 
-Current version: 1.0.
+Current version: 1.1.
 
 Project page: <https://github.com/OnjLouis/MoveToMidi>
 
