@@ -2,7 +2,7 @@
 
 Accessible Windows utility for converting Ableton Move and Ableton Note `.ablbundle` sets to standard MIDI files.
 
-Current version: 1.1.
+Current version: 1.2.
 
 Project page: <https://github.com/OnjLouis/MoveToMidi>
 
@@ -58,6 +58,7 @@ The release package includes `MoveToMidi.exe`, `README.md`, and `LICENSE.txt`. I
 - Uses explicit track names when present, otherwise the first device name, otherwise `Track N`.
 - Exports clip slots as consecutive scenes because Move/Note bundles do not contain a linear arrangement.
 - Preserves notes, velocities, tempo, time signature, and track names.
+- Reads Move 2.1 beta set time signatures stored as `upper` and `lower` values.
 - Numeric clip envelopes are exported as MIDI controller data on configurable controller numbers.
 - Source bundles are never overwritten.
 - Failure details are written to `MoveToMidi failures.log` beside the executable.

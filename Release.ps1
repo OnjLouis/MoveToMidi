@@ -95,10 +95,9 @@ function Publish-GitHubRelease([string]$version, [string]$zipPath) {
     $releaseBody = @"
 MoveToMidi $version
 
-- Fixes GitHub update checks in the app.
-- Adds Ctrl+F1 and Help > Project on GitHub.
-- Adds Help > Donate.
-- Aligns About and executable metadata with the companion apps.
+- Reads Move 2.1 beta time signatures stored as upper/lower values in Song.abl.
+- Exports the correct MIDI time signature meta event for odd-meter Move sets.
+- Keeps compatibility with earlier numerator/denominator time signature fields.
 "@
     try {
         $release = Invoke-RestMethod -Uri "https://api.github.com/repos/$repoFullName/releases/tags/$tag" -Headers $headers

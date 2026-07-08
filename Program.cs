@@ -17,9 +17,9 @@ using System.Windows.Forms;
 [assembly: System.Reflection.AssemblyCompany("Andre Louis")]
 [assembly: System.Reflection.AssemblyProduct("MoveToMidi")]
 [assembly: System.Reflection.AssemblyCopyright("Copyright (c) Andre Louis")]
-[assembly: System.Reflection.AssemblyVersion("1.1.0.0")]
-[assembly: System.Reflection.AssemblyFileVersion("1.1.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersion("1.1")]
+[assembly: System.Reflection.AssemblyVersion("1.2.0.0")]
+[assembly: System.Reflection.AssemblyFileVersion("1.2.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersion("1.2")]
 
 namespace MoveToMidi
 {
@@ -43,7 +43,7 @@ namespace MoveToMidi
     internal sealed class MainForm : Form
     {
         private const string AppName = "MoveToMidi";
-        private const string Version = "1.1";
+        private const string Version = "1.2";
         private const string ProjectUrl = "https://github.com/OnjLouis/MoveToMidi";
         private readonly AppSettings settings = AppSettings.Load();
         private readonly ListView resultsList;
@@ -1200,8 +1200,8 @@ Numeric clip envelope automation as MIDI CC messages when enabled in Preferences
             if (tracks.Count == 0) throw new InvalidDataException("Song.abl contains no tracks.");
             var tempo = GetDouble(song, "tempo", 120.0);
             var timeSignature = GetDictionary(song, "timeSignature");
-            var numerator = (int)GetDouble(timeSignature, "numerator", 4);
-            var denominator = (int)GetDouble(timeSignature, "denominator", 4);
+            var numerator = (int)GetDouble(timeSignature, "upper", GetDouble(timeSignature, "numerator", 4));
+            var denominator = (int)GetDouble(timeSignature, "lower", GetDouble(timeSignature, "denominator", 4));
             var midiTracks = new List<byte[]>();
             var noteCount = 0;
             var clipCount = 0;
